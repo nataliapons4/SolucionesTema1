@@ -93,21 +93,40 @@ c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
 
+#(A)
+MASS:: mammals
+robustbase:: Animals2
+#para que nos salga en el Global Environment:
+data("mammals")
+data("Animals2")
 
+#(B)
+dim(mammals)
+#mammals tiene 62 registros y 2 variables
+dim(Animals2)
+#Animals2 tiene 65 registros y 2 variables
+head(mammals)
+#nos muestra la información de los primeros 6 mamíferos
+head(Animals2)
+#nos muestra la información de los primeros 6 animales
+tail(mammals)
+#nos muestra la información de los 6 últimos mamíferos
+tail(Animals2)
+#nos muestra la información de los 6 últimos animales
+str(mammals)
+#nos muestra la estructura interna del data.frame mammals
+str(Animals2)
+#nos muestra la estructura interna del data.frame Animals2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#(C)
+rownames(mammals)
+#muestra el nombre de las filas de mammals (los diferentes nombres de mamíferos)
+colnames(mammals)
+#muestra el nombre de los columnas de mammals (body, brain)
+rownames(Animals2)
+#muestra el nombre de las filas de Animals2 (los diferentes nombres de animales)
+colnames(Animals2)
+#muestra el nombre de los columnas de Animals2 (body, brain)
 
 ```
 
