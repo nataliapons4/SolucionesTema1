@@ -250,7 +250,9 @@ qqPlot(cabbages$VitC)
 
 ```{r}
 
-
+levels(cabbages$Cult)
+hist(cabbages$VitC[cabbages$Cult == "c39"])
+hist(cabbages$VitC[cabbages$Cult == "c52"])
 
 ```
 
