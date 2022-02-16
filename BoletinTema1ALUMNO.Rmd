@@ -170,6 +170,12 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 
 ```{r}
 
+qqPlot(log(mammals$brain))
+qqPlot(log(Animals2$brain))
+#como podemos ver el comportamiento que presentan los graficos de cada conjunto 
+#de datos es el mismo
+#Se podría decir que si siguen una distribución Gausssiano puesto que las 
+#muestras están dentro de las líneas "discontínuas"
 
 ```
 
