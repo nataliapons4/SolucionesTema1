@@ -262,7 +262,7 @@ hist(cabbages$VitC[cabbages$Cult == "c52"])
 #Diagrama de dispersión global.
 plot(whiteside$Temp, whiteside$Gas)
 #Diagrama de dispersión etiquetando según un factor.
-plot(whiteside$Temp, whiteside$Gas, pch=c(6,16)[whiteside\$Insul])
+plot(whiteside$Temp, whiteside$Gas, pch=c(6,16)[whiteside$Insul])
 legend(x="topright",legend=c("Insul = Before","Insul = After"), pch=c(6,16))
 # Planteamos 2 modelos lineales, uno para los datos de cada factor
 Model1 <- lm(Gas ~ Temp, data = whiteside, subset = which(Insul == "Before"))
@@ -271,40 +271,30 @@ Model2 <- lm(Gas ~ Temp, data = whiteside, subset = which(Insul == "After"))
 abline(Model1, lty=2)
 abline(Model2)
 ```
-
+a.  Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
 ```{r,echo=T,include=T,eval=F}
 
-
-
-
-
-
-
-
-
-
-
+#Diagrama de dispersión global.
+plot(cabbages$VitC, cabbages$HeadWt)
+#No hay relación lineal debido a que no se agrupan en forma de linea
 
 ```
-
-a.  Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
 b.  Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver[Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
 
 ```{r}
 
+#Diagrama de dispersión etiquetado según el tipo de cultivo
+plot(cabbages$HeadWt, cabbages$VitC, pch = c(6,16)[cabbages$Cult])
+legend(x = "topright", legend = c("cult = c39", "cult = c52"), pch = c(6,16))
 
-
-
-
-
-
-
-
-
-
-
-
-
+# Planteamos 2 modelos lineales, uno para los datos de cada cultivo
+Modelo1 <- lm(VitC ~ HeadWt, data = cabbages, subset = which(Cult =="c39"))
+Modelo2 <- lm(VitC ~ HeadWt, data = cabbages, subset = which(Cult =="c52"))
+Modelo3 <- lm(VitC ~ HeadWt, data = cabbages)
+# Representamos las rectas correspondientes a cada modelo lineal
+abline(Modelo1, lty=2)
+abline(Modelo2)
+abline(Modelo3, col = "Green")
 
 
 ```
@@ -313,6 +303,8 @@ c.  Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficien
 
 ```{r}
 
-
+summary(Modelo1)
+summary(Modelo2)
+summary(Modelo3)
 
 ```
