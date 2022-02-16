@@ -238,9 +238,11 @@ summary(Chile)
 
 ```{r}
 
-
-
-
+qqPlot(cabbages$HeadWt)
+qqPlot(cabbages$VitC)
+#podemos decir que el conjunto cabbages en las dos variables tiene todas las 
+#muestras dentro de las líneas "discontínuas" por tanto podemos decir que sí
+#sigue una distribución Gaussiana
 
 ```
 
