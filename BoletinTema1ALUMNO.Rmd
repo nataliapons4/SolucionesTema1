@@ -210,31 +210,27 @@ nrow(libReturn$results)
 
 ```{r}
 
+#(A)
+library(MASS)
+nrow(cabbages)
+ncol(cabbages)
+str(cabbages)
 
+#(B)
+colSums(sapply(cabbages, is.na))#muestra los valores perdidos en cada columna
+sum(is.na(cabbages))#no encuentra ningún valor perdido
 
+#(C)
+library(car)
+nrow(Chile)
+ncol(Chile)
+str(Chile)
+colSums(sapply(Chile, is.na))#muestra los valores perdidos en cada columna
+sum(is.na(Chile))#encuentra 295 valores perdidos
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#(D)
+summary(cabbages)
+summary(Chile)
 
 ```
 
